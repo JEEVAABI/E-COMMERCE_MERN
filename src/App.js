@@ -1,13 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-import Home from './pages/Home';
+import React from 'react';
+import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
+import Header from './Components/Header';
+import Products from './Components/Products';
+import Footer from './Components/footer';
+// import Cart from './Cart';
+// import Register from './Register';
 
-function App() {
+const App = () => {
+  
   return (
-    <div className = "App">
-      <Home/>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+
+      <Route exact path="/" element={<Products/>}></Route>
+      
+      </Routes>
+      <Footer />
+    </Router>
   );
-}
+};
 
 export default App;
